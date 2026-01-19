@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iEducate University - Transforming Education</title>
+  <style>
+    /* ======= Base Styles ======= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    a { text-decoration: none; }
+
+    /* ======= Navbar ======= */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #003366;
+      color: white;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo img { height: 50px; }
+    .nav-list { list-style: none; display: flex; gap: 20px; }
+    .nav-list a {
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .nav-list a:hover { color: #ffcc00; }
+    .rightNav input {
+      padding: 5px;
+      border: none;
+      border-radius: 3px;
+    }
+    .btn {
+      background: #ffcc00;
+      color: black;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: scale(1.05); }
+
+    /* ======= Hero Section ======= */
+    #home {
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+    #home h1 { font-size: 3em; margin-bottom: 10px; }
+    #home p { font-size: 1.2em; margin-bottom: 20px; }
+
+    /* ======= Sections ======= */
+    section {
+      padding: 80px 20px;
+      background: white;
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 1000px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2 { color: #003366; margin-bottom: 20px; font-size: 2em; }
+    p { line-height: 1.6; font-size: 1.1em; }
+    ul.course-list, ul.faq-list, ul.testimonials-list {
+      list-style: none; padding-left: 0;
+    }
+    ul.course-list li, ul.faq-list li, ul.testimonials-list li { margin-bottom: 10px; font-size: 1.1em; }
+
+    /* ======= Cards ======= */
+    .faculty-cards, .event-cards, .testimonial-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+
+    /* ======= Contact Form ======= */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; }
+    textarea { resize: none; height: 120px; }
+
+    /* ======= Footer ======= */
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <nav class="navbar">
+    <div class="logo"><img src="img2.png" alt="logo"></div>
+    <ul class="nav-list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#faculty">Faculty</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="rightNav">
+      <input type="text" id="search" placeholder="Search...">
+      <button class="btn" onclick="searchAlert()">Search</button>
+    </div>
+  </nav>
+
+  <!-- ======= Home Section ======= -->
+  <section id="home">
+    <h1>Welcome to iEducate University</h1>
+    <p>Empowering students with knowledge, innovation, and opportunities.</p>
+    <button class="btn" onclick="scrollToSection('about')">Learn More</button>
+  </section>
+
+  <!-- ======= About Section ======= -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>iEducate University is a leading institution dedicated to transforming education through technology, research, and innovation.  
+      Our mission is to nurture future leaders and empower students to make a global impact through knowledge and creativity.</p>
+    <p>Founded in 2005, iEducate University has expanded to over 15,000 students from 50+ countries, offering diverse programs and state-of-the-art research facilities.</p>
+  </section>
+
+  <!-- ======= Courses Section ======= -->
+  <section id="courses">
+    <h2>Our Courses</h2>
+    <ul class="course-list">
+      <li>Bachelor of Computer Science</li>
+      <li>Bachelor of Business Administration</li>
+      <li>Bachelor of Engineering</li>
+      <li>Master of Data Science</li>
+      <li>Doctorate in Artificial Intelligence</li>
+      <li>Certificate in Cybersecurity</li>
+      <li>Diploma in Digital Marketing</li>
+    </ul>
+  </section>
+
+  <!-- ======= Faculty Section ======= -->
+  <section id="faculty">
+    <h2>Meet Our Faculty</h2>
+    <div class="faculty-cards">
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Prof. John Doe">
+        <h3>Prof. John Doe</h3>
+        <p>Head of Computer Science, AI Researcher</p>
+      </div>
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Jane Smith">
+        <h3>Dr. Jane Smith</h3>
+        <p>Business Administration, Entrepreneurship Expert</p>
+      </div>
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Dr. Robert Brown">
+        <h3>Dr. Robert Brown</h3>
+        <p>Engineering Department, Robotics Specialist</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Events Section ======= -->
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <div class="event-cards">
+      <div class="card">
+        <h3>AI & Robotics Workshop</h3>
+        <p>Date: Feb 25, 2026</p>
+        <p>Join experts for a hands-on workshop on AI and robotics innovations.</p>
+      </div>
+      <div class="card">
+        <h3>Business Leadership Summit</h3>
+        <p>Date: Mar 10, 2026</p>
+        <p>Connect with industry leaders and learn the secrets of successful entrepreneurship.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials">
+    <h2>Student Testimonials</h2>
+    <div class="testimonial-cards">
+      <div class="card">
+        <p>"iEducate University provided me the skills and confidence to excel in my career!"</p>
+        <strong>- Sarah Lee, Computer Science Graduate</strong>
+      </div>
+      <div class="card">
+        <p>"The professors are incredibly supportive and the research opportunities are endless."</p>
+        <strong>- Michael Tan, Engineering Student</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FAQ Section ======= -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <ul class="faq-list">
+      <li><strong>Q:</strong> What programs do you offer?<br><strong>A:</strong> We offer undergraduate, graduate, and certificate programs in tech, business, and engineering fields.</li>
+      <li><strong>Q:</strong> Can international students apply?<br><strong>A:</strong> Yes! We welcome students from all countries with support for visas and accommodations.</li>
+      <li><strong>Q:</strong> Are scholarships available?<br><strong>A:</strong> Yes, we provide merit-based and need-based scholarships for eligible students.</li>
+    </ul>
+  </section>
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <p>© 2026 iEducate University. All rights reserved.</p>
+  </footer>
+
+  <!-- ======= JavaScript ======= -->
+  <script>
+    function searchAlert() {
+      const query = document.getElementById('search').value;
+      if (query) {
+        alert('Search feature coming soon! You searched for: ' + query);
+      } else {
+        alert('Please enter a search term.');
+      }
+    }
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      alert('Thank you for contacting us! We will get back to you soon.');
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
